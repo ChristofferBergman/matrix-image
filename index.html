@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matrix Image Generator</title>
+</head>
+<body>
+  <h2>Matrix Image Generator</h2>
+
+  <label for="textInput">Text to render:</label><br/>
+  <textarea id="textInput" rows="10" cols="100"></textarea><br/><br/>
+
+  <label for="keywordInput">Optional word to highlight in white:</label><br/>
+  <input type="text" id="keywordInput"><br/><br/>
+
+  <label for="seedInput">Random seed:</label><br/>
+  <input type="number" id="seedInput"><br/><br/>
+
+  <input type="checkbox" id="transparent">Transparent Background</input><br/><br/>
+
+  <button onclick="generateImage()">Generate</button><br/><br/>
+
+  <canvas id="myCanvas" width="1920" height="1080" style="border:1px solid #000;"></canvas><br/><br/>
+
+  <button onclick="downloadImage()">Download Image</button>
+
+  <script src="script.js"></script>
+  <script>
+    // Initialize seed with a random number
+    document.getElementById("seedInput").value = Math.floor(Math.random() * 1000000);
+  </script>
+</body>
+</html>
