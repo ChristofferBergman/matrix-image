@@ -8,7 +8,10 @@ function generateImage() {
   const canvas = document.getElementById('myCanvas');
   const ctx = canvas.getContext('2d');
 
-  const renderText = document.getElementById('textInput').value;
+  const renderText =
+    document.getElementById('spaces').checked ?
+      document.getElementById('textInput').value.replace('\t', '').replace(/\s+/g, '').trim() :
+      document.getElementById('textInput').value.replace('\t', ' ').replace(/\s+/g, ' ');
   const keyword = document.getElementById('keywordInput').value;
   const seed = parseInt(document.getElementById('seedInput').value) || 0;
 
